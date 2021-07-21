@@ -8,10 +8,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.blueGrey,
         body: SafeArea(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 CircleAvatar(
                   radius: 50.0,
@@ -36,50 +38,51 @@ class MyApp extends StatelessWidget {
                     fontWeight: FontWeight.bold
                     )
                 ),
-                Card(
-                  color: Colors.white,
-                  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(
-                        Icons.phone,
-                        color: Colors.blueGrey
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        '555.555.5555',
-                        style: TextStyle(
-                          color: Colors.blueGrey[900],
-                          fontFamily: 'SourceSansPro',
-                          fontSize: 20.0,
-                        )
-                      )
-                    ]
+                SizedBox(
+                  height: 20.0,
+                  width: 150.0,
+                  child: Divider(
+                    color: Colors.white,
                   )
                 ),
                 Card(
-                  color: Colors.white,
                   margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(
+                  child: Padding(
+                    padding: EdgeInsets.all(5.0),
+                    child: ListTile(
+                      leading: Icon(
+                          Icons.phone,
+                          color: Colors.blueGrey
+                      ),
+                      title: Text(
+                          '555.555.5555',
+                          style: TextStyle(
+                            color: Colors.blueGrey[900],
+                            fontFamily: 'SourceSansPro',
+                            fontSize: 20.0,
+                          )
+                      ),
+                    )
+                  )
+                ),
+                Card(
+                  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                  child: Padding(
+                    padding: EdgeInsets.all(5.0),
+                    child: ListTile(
+                      leading: Icon(
                         Icons.email,
                         color: Colors.blueGrey,
                       ),
-                      SizedBox(
-                        width: 10.0,
+                      title: Text(
+                          'hello@chadparker.me',
+                          style: TextStyle(
+                            color: Colors.blueGrey[900],
+                            fontFamily: 'SourceSansPro',
+                            fontSize: 20.0,
+                          )
                       ),
-                      Text(
-                        'hello@chadparker.me',
-                        style: TextStyle(
-                          color: Colors.blueGrey[900],
-                          fontFamily: 'SourceSansPro',
-                          fontSize: 20.0,
-                        )
-                      )
-                    ]
+                    )
                   )
                 )
               ],
@@ -89,3 +92,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
